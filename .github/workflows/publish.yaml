@@ -1,0 +1,24 @@
+name: Publish Website
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  publish_job:
+    name: Publish the Website
+    runs-on: ubuntu-latest
+    steps:
+      - name: Clone Git repository
+        uses: actions/checkout@v2
+        with:
+          submodules: true
+      - name: Install Hugo
+        run: brew install hugo
+      - name: Publish Website
+        run: |
+          cd public
+          git add .
+          git commit -m "Publishing commit ${{ github.sha }}"
+          git push origin master
