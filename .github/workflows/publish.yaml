@@ -21,6 +21,8 @@ jobs:
       - name: Publish Website
         run: |
           cd public
+          git config user.email "michael.collins@neudesic.com"
+          git config user.name "Michael Collins"
           git add .
-          git commit -m "Publishing commit ${{ github.sha }}" --author="Michael Collins <michael.collins@neudesic.com>"
+          git commit -m "Publishing commit ${{ github.sha }}"
           git push origin master
