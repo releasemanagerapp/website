@@ -16,6 +16,8 @@ jobs:
           submodules: true
       - name: Install Hugo
         run: brew install hugo
+      - name: Build Website
+        run: hugo
       - name: Publish Website
         run: |
           cd public
