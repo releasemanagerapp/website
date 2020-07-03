@@ -22,5 +22,5 @@ jobs:
         run: |
           cd public
           git add .
-          git commit -m "Publishing commit ${{ github.sha }}"
+          git commit -m "Publishing commit ${{ github.sha }}" --author="Michael Collins <michael.collins@neudesic.com>"
           git push origin master
